@@ -1,0 +1,76 @@
+.find-store,
+.track-order,
+.register-login {
+    border-right: 1px solid #303030;
+    font-size: 14px;
+
+    a {
+        text-decoration: none;
+        color: #303030;
+    }
+
+    a:hover {
+        color: #2F80ED;
+    }
+}
+
+nav {
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+
+    .navbar-brand {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 30px;
+        }
+
+        .logo-title {
+            font-weight: 700;
+            font-size: 20px;
+            color: #303030;
+        }
+    }
+
+    ul {
+        li {
+            a.nav-link {
+                text-decoration: none;
+                color: #303030;
+            }
+
+            a.nav-link:hover {
+                color: #2F80ED;
+            }
+        }
+    }
+
+    form {
+        .form-control {
+            border-radius: 0;
+            border: 1px solid #303030;
+        }
+
+        .inner-addon {
+            position: relative;
+        }
+
+        /* style icon */
+        .inner-addon .material-icons {
+            position: absolute;
+            padding: 10px;
+            pointer-events: none;
+        }
+
+        .right-addon .material-icons {
+            right: 0px;
+        }
+
+        .right-addon input {
+            padding-right: 30px;
+        }
+    }
+}
