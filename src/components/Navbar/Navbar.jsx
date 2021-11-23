@@ -18,7 +18,7 @@ export default function Navbar() {
         </div>
         <div className="d-flex">
           <div className="register-login py-2 pe-3 d-flex">
-            <span class="material-icons-outlined">person</span>{" "}
+            <span className="material-icons-outlined">person</span>{" "}
             <Link to="/login" className="ms-2">
               Login
             </Link>
