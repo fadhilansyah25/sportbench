@@ -1,6 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { getStorage ,ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
-import { getAuth ,createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "@firebase/storage";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { v4 as uuidv4 } from "uuid";
 
 // Set the configuration for your app
@@ -56,4 +61,10 @@ export const createFireBaseAuth = async (email, password) => {
       console.log(error);
     });
   return check;
+};
+
+export const loginEmailandPassword = async (email, password) => {
+  return await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => userCredential)
+    .catch((error) => error);
 };

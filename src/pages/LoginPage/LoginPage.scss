@@ -1,11 +1,12 @@
-.register-page {
+.login-page {
     .left-content {
-        background-image: url('../../assets/zachary-kadolph-hwHHq82Enf0-unsplash.jpg');
+        background-image: url('../../assets/serge-kutuzov-_FPy-FUndok-unsplash-scaled.jpg');
         background-size: cover;
         background-position: center;
     }
 
     .right-content {
+        height: 40rem;
         padding: 2rem 6rem;
 
         form {
@@ -26,10 +27,6 @@
             .btn {
                 border-radius: 0;
                 width: 100%;
-            }
-
-            .form-check-label {
-                text-decoration: underline;
             }
 
             .inner-addon {

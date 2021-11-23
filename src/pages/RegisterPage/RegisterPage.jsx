@@ -5,7 +5,7 @@ import { USER_REGISTRATION } from "../../graphql/queries";
 import "./RegisterPage.scss";
 
 export default function RegisterPage() {
-  const [formRegister, setFromRegister] = useState({
+  const [formRegister, setFormRegister] = useState({
     fullname: "",
     noTelephone: "",
     email: "",
@@ -18,7 +18,7 @@ export default function RegisterPage() {
     useMutation(USER_REGISTRATION);
 
   const resetForm = () => {
-    setFromRegister({
+    setFormRegister({
       fullname: "",
       noTelephone: "",
       email: "",
@@ -29,7 +29,7 @@ export default function RegisterPage() {
   };
 
   const handleInputChange = (e) => {
-    setFromRegister({ ...formRegister, [e.target.name]: e.target.value });
+    setFormRegister({ ...formRegister, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -54,7 +54,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="container">
+    <div className="container register-page">
       <div className="row">
         <div className="col-6 left-content"></div>
         <div className="col-6 right-content">
@@ -148,7 +148,7 @@ export default function RegisterPage() {
                 name="newsLetter"
                 checked={formRegister.newsLetter}
                 onChange={(e) =>
-                  setFromRegister({
+                  setFormRegister({
                     ...formRegister,
                     [e.target.name]: !formRegister.newsLetter,
                   })
