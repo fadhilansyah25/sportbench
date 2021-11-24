@@ -19,3 +19,13 @@ export const USER_REGISTRATION = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+  query MyQuery($where: sport_bench_users_bool_exp = {}) {
+    sport_bench_users(where: $where) {
+      email
+      fullname
+      no_telephone
+    }
+  }
+`;

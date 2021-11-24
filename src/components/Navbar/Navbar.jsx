@@ -10,10 +10,14 @@ export default function Navbar() {
         <div className="d-flex">
           <div className="find-store py-2 pe-3 d-flex">
             <span className="material-icons-outlined">location_on</span>
-            <Link to="/" className="ms-2">Find Store</Link>
+            <Link to="/" className="ms-2">
+              Find Store
+            </Link>
           </div>
           <div className="track-order py-2 px-3 d-flex">
-            <Link to="/" className="">Track Order</Link>
+            <Link to="/" className="">
+              Track Order
+            </Link>
           </div>
         </div>
         <div className="d-flex">
@@ -23,9 +27,7 @@ export default function Navbar() {
               Login
             </Link>
             <span className="mx-2">/</span>
-            <Link to="/register">
-              Register
-            </Link>
+            <Link to="/register">Register</Link>
           </div>
         </div>
       </div>

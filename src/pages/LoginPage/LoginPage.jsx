@@ -1,6 +1,8 @@
+// import { useLazyQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { loginEmailandPassword } from "../../firebase";
+// import { GET_USER } from "../../graphql/queries";
 import "./LoginPage.scss";
 
 export default function LoginPage() {
@@ -9,6 +11,8 @@ export default function LoginPage() {
     password: "",
     remember: false,
   });
+
+  // const [getUser, { data, loading }] = useLazyQuery(GET_USER);
 
   const resetForm = () => {
     setFormLogin({
@@ -29,11 +33,14 @@ export default function LoginPage() {
       formLogin.email,
       formLogin.password
     );
+    // await getUser({ variables: { where: { id: { _eq: result.user.uid } } } });
 
     console.log(result);
-
     resetForm();
+
+    window.sessionStorage.setItem("currentUser", JSON.stringify(result));
   };
+  // window.sessionStorage.clear();
 
   return (
     <div className="container login-page">
@@ -57,7 +64,7 @@ export default function LoginPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">email</span>
+                <span className="material-icons-outlined icons">email</span>
               </div>
             </div>
             <div className="mb-4">

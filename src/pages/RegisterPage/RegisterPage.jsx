@@ -10,7 +10,7 @@ export default function RegisterPage() {
     noTelephone: "",
     email: "",
     password: "",
-    reEnterPassword: "",
+    username: "",
     newsLetter: false,
   });
 
@@ -23,7 +23,7 @@ export default function RegisterPage() {
       noTelephone: "",
       email: "",
       password: "",
-      reEnterPassword: "",
+      username: "",
       newsLetter: false,
     });
   };
@@ -37,7 +37,8 @@ export default function RegisterPage() {
 
     const userCredential = await createFireBaseAuth(
       formRegister.email,
-      formRegister.password
+      formRegister.password,
+      formRegister.username
     );
     console.log(userCredential);
     await insertUser({
@@ -76,7 +77,7 @@ export default function RegisterPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">person</span>
+                <span className="material-icons-outlined icons">person</span>
               </div>
             </div>
             <div className="mb-4">
@@ -93,7 +94,24 @@ export default function RegisterPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">phone</span>
+                <span className="material-icons-outlined icons">phone</span>
+              </div>
+            </div>
+            <div className="mb-4">
+              <label htmlFor="username" className="form-label">
+                Username
+              </label>
+              <div className="input-group inner-addon right-addon">
+                <input
+                  type="text"
+                  name="username"
+                  className="form-control"
+                  placeholder="Enter your Username"
+                  value={formRegister.username}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span className="material-icons-outlined icons">person</span>
               </div>
             </div>
             <div className="mb-4">
@@ -110,7 +128,7 @@ export default function RegisterPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">email</span>
+                <span className="material-icons-outlined icons">email</span>
               </div>
             </div>
             <div className="mb-4">
@@ -123,20 +141,6 @@ export default function RegisterPage() {
                 className="form-control"
                 placeholder="Enter your password"
                 value={formRegister.password}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="reEnterPassword" className="form-label">
-                Re-enter Password
-              </label>
-              <input
-                type="password"
-                name="reEnterPassword"
-                className="form-control"
-                placeholder="Re-Enter your password"
-                value={formRegister.reEnterPassword}
                 onChange={handleInputChange}
                 required
               />
