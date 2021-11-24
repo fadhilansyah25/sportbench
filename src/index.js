@@ -5,12 +5,11 @@ import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://champion-piranha-28.hasura.app/v1/graphql",
+  uri: process.env.REACT_APP_HASURA_URI,
   cache: new InMemoryCache(),
   headers: {
     "content-type": "application/json",
-    "x-hasura-admin-secret":
-      "l1m3nwk3760ZUuiHSU4QAEqz50EsRD4vWb7A7oo9ncqA7UnFb94LQ8O9iU34mMZI",
+    "x-hasura-admin-secret": process.env.REACT_APP_HASURA_ADMIN_SECRET,
   },
 });
 

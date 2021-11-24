@@ -5,12 +5,12 @@ import { USER_REGISTRATION } from "../../graphql/queries";
 import "./RegisterPage.scss";
 
 export default function RegisterPage() {
-  const [formRegister, setFromRegister] = useState({
+  const [formRegister, setFormRegister] = useState({
     fullname: "",
     noTelephone: "",
     email: "",
     password: "",
-    reEnterPassword: "",
+    username: "",
     newsLetter: false,
   });
 
@@ -18,18 +18,18 @@ export default function RegisterPage() {
     useMutation(USER_REGISTRATION);
 
   const resetForm = () => {
-    setFromRegister({
+    setFormRegister({
       fullname: "",
       noTelephone: "",
       email: "",
       password: "",
-      reEnterPassword: "",
+      username: "",
       newsLetter: false,
     });
   };
 
   const handleInputChange = (e) => {
-    setFromRegister({ ...formRegister, [e.target.name]: e.target.value });
+    setFormRegister({ ...formRegister, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -37,7 +37,8 @@ export default function RegisterPage() {
 
     const userCredential = await createFireBaseAuth(
       formRegister.email,
-      formRegister.password
+      formRegister.password,
+      formRegister.username
     );
     console.log(userCredential);
     await insertUser({
@@ -54,7 +55,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="container">
+    <div className="container register-page">
       <div className="row">
         <div className="col-6 left-content"></div>
         <div className="col-6 right-content">
@@ -76,7 +77,7 @@ export default function RegisterPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">person</span>
+                <span className="material-icons-outlined icons">person</span>
               </div>
             </div>
             <div className="mb-4">
@@ -93,7 +94,24 @@ export default function RegisterPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">phone</span>
+                <span className="material-icons-outlined icons">phone</span>
+              </div>
+            </div>
+            <div className="mb-4">
+              <label htmlFor="username" className="form-label">
+                Username
+              </label>
+              <div className="input-group inner-addon right-addon">
+                <input
+                  type="text"
+                  name="username"
+                  className="form-control"
+                  placeholder="Enter your Username"
+                  value={formRegister.username}
+                  onChange={handleInputChange}
+                  required
+                />
+                <span className="material-icons-outlined icons">person</span>
               </div>
             </div>
             <div className="mb-4">
@@ -110,7 +128,7 @@ export default function RegisterPage() {
                   onChange={handleInputChange}
                   required
                 />
-                <span class="material-icons-outlined icons">email</span>
+                <span className="material-icons-outlined icons">email</span>
               </div>
             </div>
             <div className="mb-4">
@@ -127,20 +145,6 @@ export default function RegisterPage() {
                 required
               />
             </div>
-            <div className="mb-4">
-              <label htmlFor="reEnterPassword" className="form-label">
-                Re-enter Password
-              </label>
-              <input
-                type="password"
-                name="reEnterPassword"
-                className="form-control"
-                placeholder="Re-Enter your password"
-                value={formRegister.reEnterPassword}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
             <div className="form-check mb-4">
               <input
                 className="form-check-input"
@@ -148,7 +152,7 @@ export default function RegisterPage() {
                 name="newsLetter"
                 checked={formRegister.newsLetter}
                 onChange={(e) =>
-                  setFromRegister({
+                  setFormRegister({
                     ...formRegister,
                     [e.target.name]: !formRegister.newsLetter,
                   })

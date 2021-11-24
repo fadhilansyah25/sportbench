@@ -1,18 +1,28 @@
 import { initializeApp } from "firebase/app";
-import { getStorage ,ref, uploadBytesResumable, getDownloadURL } from "@firebase/storage";
-import { getAuth ,createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "@firebase/storage";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { v4 as uuidv4 } from "uuid";
 
 // Set the configuration for your app
 // TODO: Replace with your app's config object
 const firebaseConfig = {
-  apiKey: "AIzaSyCgoZ-2ntgI4ZofoXCQ6VtAlJjtyzj92TQ",
-  authDomain: "alterra-project.firebaseapp.com",
-  projectId: "alterra-project",
-  storageBucket: "alterra-project.appspot.com",
-  messagingSenderId: "914135951453",
-  appId: "1:914135951453:web:b4494529c4e3ca3b9ac5b4",
-  measurementId: "G-GYZ3N9Y13K",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 export const firebaseApp = initializeApp(firebaseConfig);
 
@@ -46,14 +56,22 @@ export const uploadImageToFireBase = async (imageAsFile) => {
   }
 };
 
-export const createFireBaseAuth = async (email, password) => {
-  let check;
+export const createFireBaseAuth = async (email, password, username) => {
+  let user;
   await createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      check = userCredential.user;
+      user = userCredential.user;
     })
     .catch((error) => {
       console.log(error);
     });
-  return check;
+  await updateProfile(user, { displayName: username });
+
+  return user;
+};
+
+export const loginEmailandPassword = async (email, password) => {
+  return await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => userCredential)
+    .catch((error) => error);
 };
