@@ -10,6 +10,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  signOut
 } from "firebase/auth";
 import { v4 as uuidv4 } from "uuid";
 
@@ -74,4 +75,14 @@ export const loginEmailandPassword = async (email, password) => {
   return await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => userCredential)
     .catch((error) => error);
+};
+
+export const logOutFirebaseAuth = async () => {
+  signOut(auth)
+    .then(() => {
+      console.log("Log Out Successfull");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
