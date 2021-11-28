@@ -1,0 +1,25 @@
+.footer {
+    padding: 50px 0;
+
+    .footer-list {
+        h5 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                color: #757575;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

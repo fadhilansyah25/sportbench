@@ -1,0 +1,40 @@
+.bottom-banner {
+    background-image: url('../../assets/gentrit-sylejmani-JjUyjE-oEbM-unsplash.jpg');
+    background-size: cover;
+    /* or contain depending on what you want */
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+
+    .filter-bottom-banner {
+        height: 100%;
+        background: linear-gradient(90deg, rgba(9, 30, 58, 0.5) 0%, rgba(47, 128, 237, 0.5) 50%, rgba(45, 158, 224, 0.5) 100%);
+
+        .content {
+            color: white;
+            padding: 5rem;
+
+            .form-control {
+                border-radius: 0;
+                // border: 1px solid #303030;
+            }
+
+            h1 {
+                font-weight: 700;
+                font-size: 3rem;
+                line-height: 70px;
+            }
+
+            .btn {
+                border-radius: 0;
+                width: 100%;
+            }
+
+            p {
+                line-height: 28px;
+            }
+        }
+    }
+}

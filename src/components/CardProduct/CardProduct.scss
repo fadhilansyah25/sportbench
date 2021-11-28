@@ -1,0 +1,35 @@
+.card {
+    border-radius: 0;
+    box-sizing: content-box;
+    border: 1px solid #8000af00;
+    color: #062D51;
+
+    &:hover {
+        border: 1px solid #8000AF;
+        border-radius: 0;
+        cursor: pointer;
+    }
+
+    p {
+        margin: 0.25rem 0;
+        text-transform: capitalize;
+        line-height: normal;
+        font-size: .8rem;
+    }
+
+    .card-title{
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .card-price {
+        font-size: 1rem;
+    }
+
+    .card-ratings {
+        .material-icons-outlined {
+            font-size: 1.1rem;
+            margin-right: .5rem;
+        }
+    }
+}

@@ -2,10 +2,26 @@ import React from "react";
 import SportBenchLogo from "assets/Logo.svg";
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "redux/reducer";
+import { logOutFirebaseAuth } from "firebase";
 
 export default function Navbar() {
+  const currentUser = useSelector((state) =>
+    state.currentUser ? JSON.parse(state.currentUser) : null
+  );
+
+  const expired = Date.now() > currentUser?.stsTokenManager?.expirationTime;
+  const dispatch = useDispatch();
+
+  const logout = async () => {
+    await logOutFirebaseAuth();
+    dispatch(setCurrentUser(null));
+  };
+
   return (
-    <>
+    <div className="custom-navbar">
       <div className="container d-flex justify-content-between">
         <div className="d-flex">
           <div className="find-store py-2 pe-3 d-flex">
@@ -22,12 +38,26 @@ export default function Navbar() {
         </div>
         <div className="d-flex">
           <div className="register-login py-2 pe-3 d-flex">
-            <span className="material-icons-outlined">person</span>{" "}
-            <Link to="/login" className="ms-2">
-              Login
-            </Link>
-            <span className="mx-2">/</span>
-            <Link to="/register">Register</Link>
+            <span className="material-icons-outlined">person</span>
+            {currentUser && !expired ? (
+              <>
+                <Link to="/login" className="ms-2">
+                  {currentUser?.displayName}
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/" onClick={logout}>
+                  Log Out
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="ms-2">
+                  Login
+                </Link>
+                <span className="mx-2">|</span>
+                <Link to="/register">Register</Link>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -86,6 +116,6 @@ export default function Navbar() {
           </form>
         </div>
       </nav>
-    </>
+    </div>
   );
 }

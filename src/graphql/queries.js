@@ -29,3 +29,19 @@ export const GET_USER = gql`
     }
   }
 `;
+
+export const GET_PRODUCTS = gql`
+  query MyQuery($where: sport_bench_products_bool_exp = {}) {
+    sport_bench_products(where: $where) {
+      id
+      instock
+      product_image
+      product_name
+      rating
+      price
+      product_category {
+        category
+      }
+    }
+  }
+`;
