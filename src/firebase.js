@@ -36,7 +36,7 @@ export const uploadImageToFireBase = async (imageAsFile) => {
   if (imageAsFile === "") {
     console.error(`not an image, the image file is a ${typeof imageAsFile}`);
   } else {
-    const storageRef = ref(storage, `/images/${uuidv4()}`);
+    const storageRef = ref(storage, `/proofPayment/${uuidv4()}`);
     const uploadTask = uploadBytesResumable(storageRef, imageAsFile);
     await uploadTask.then((snapshot) => {
       const progress =

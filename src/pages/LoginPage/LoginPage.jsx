@@ -43,7 +43,7 @@ export default function LoginPage() {
       <div className="row">
         <div className="col-6 left-content"></div>
         <div className="col-6 right-content d-flex align-items-center justify-content-center">
-          <div> 
+          <div>
             <h1>Login</h1>
             <h5 className="mt-4">
               Welcome back! Please login to your account.

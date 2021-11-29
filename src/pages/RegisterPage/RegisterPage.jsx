@@ -60,8 +60,8 @@ export default function RegisterPage() {
         <div className="col-6 left-content"></div>
         <div className="col-6 right-content">
           <h1>Register</h1>
-          {loadingRegis ? <p>please wait register on progress</p> : null}
-          {errorRegis ? <p>There is something wrong</p> : null}
+          {loadingRegis ? <h4>please wait register on progress</h4> : null}
+          {errorRegis ? <h4>There is something wrong</h4> : null}
           <form onSubmit={handleSubmit} className="mt-4">
             <div className="mb-4">
               <label htmlFor="fullname" className="form-label">
