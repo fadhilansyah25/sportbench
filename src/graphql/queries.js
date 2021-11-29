@@ -45,3 +45,39 @@ export const GET_PRODUCTS = gql`
     }
   }
 `;
+
+export const INSERT_ORDER = gql`
+  mutation MyMutation(
+    $address: String!
+    $color: String!
+    $description: String = ""
+    $email: bpchar!
+    $fullname: name!
+    $noTelephone: bpchar!
+    $payment_image: bpchar!
+    $product_id: uuid!
+    $quantity: Int!
+    $size: bpchar!
+    $total: Int!
+    $user_id: bpchar!
+  ) {
+    insert_sport_bench_orders(
+      objects: {
+        address: $address
+        color: $color
+        description: $description
+        email: $email
+        fullname: $fullname
+        noTelephone: $noTelephone
+        payment_image: $payment_image
+        product_id: $product_id
+        quantity: $quantity
+        size: $size
+        total: $total
+        user_id: $user_id
+      }
+    ) {
+      affected_rows
+    }
+  }
+`;
