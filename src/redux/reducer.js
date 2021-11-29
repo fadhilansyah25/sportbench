@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let currentUser = null;
-let pageProduct = {};
+let checkoutProduct = null;
 
 const authUser = createSlice({
   name: "authUser",
   initialState: {
     currentUser: currentUser,
-    pageProduct
+    checkoutProduct: checkoutProduct
   },
   reducers: {
     setCurrentUser: (state, action) => {
@@ -16,17 +16,14 @@ const authUser = createSlice({
         currentUser: action.payload,
       };
     },
-    addDataProduct: (state, action) => {
+    setCheckout: (state, action) => {
       return {
         ...state,
-        pageProduct: {
-          ...pageProduct,
-          [action.payload.id]: action.payload.data
-        }
+        checkoutProduct: {...checkoutProduct, ...action.payload}
       }
     }
   },
 });
 
-export const { setCurrentUser } = authUser.actions;
+export const { setCurrentUser, setCheckout } = authUser.actions;
 export const reducer = authUser.reducer;

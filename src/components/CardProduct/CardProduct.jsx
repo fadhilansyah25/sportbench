@@ -11,8 +11,8 @@ export default function CardProduct(props) {
   }
 
   return (
-    <div className="card card-product"onClick={handleCardClik} style={{ width: "18rem" }}>
-      <img src={data?.product_image} className="" alt="" />
+    <div className="card card-product mb-4"onClick={handleCardClik} style={{ width: "18rem" }}>
+      <img src={data?.product_image} className="" alt="" style={{maxHeight: '192px'}} />
       <div className="card-body">
         <p className="card-category">{data?.product_category?.category}</p>
         <p className="card-title">{data?.product_name}</p>
