@@ -8,13 +8,13 @@ import BottomBanner from "../../components/BottomBanner/BottomBanner";
 import Footer from "../../components/Footer/Footer";
 
 export default function LandingPage() {
-  const { data, loading, error } = useQuery(GET_PRODUCTS);
+  const { data } = useQuery(GET_PRODUCTS);
 
   return (
     <div>
       <HeroBanner></HeroBanner>
       <BrandLogo></BrandLogo>
-      <ProductList data={data}></ProductList>
+      <ProductList data={data} title="POPULAR RIGHT NOW"></ProductList>
       <BottomBanner></BottomBanner>
       <Footer></Footer>
     </div>
