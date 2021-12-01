@@ -15,7 +15,7 @@ export default function WomenProductPage() {
 
   return (
     <div>
-      <ProductList data={data} title="MEN'S PRODUCTS"></ProductList>
+      <ProductList data={data} title="WOMEN'S PRODUCTS"></ProductList>
       <BottomBanner></BottomBanner>
       <Footer></Footer>
     </div>
