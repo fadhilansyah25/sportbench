@@ -31,17 +31,21 @@ export const GET_USER = gql`
 `;
 
 export const GET_PRODUCTS = gql`
-  query MyQuery($where: sport_bench_products_bool_exp = {}) {
-    sport_bench_products(where: $where) {
-      id
-      instock
-      product_image
-      product_name
+  query MyQuery(
+    $where: sport_bench_products_bool_exp = {}
+    $order_by: [sport_bench_products_order_by!] = {}
+  ) {
+    sport_bench_products(where: $where, order_by: $order_by) {
+      category_id
       rating
-      price
+      product_name
+      product_image
       product_category {
         category
       }
+      price
+      instock
+      id
     }
   }
 `;

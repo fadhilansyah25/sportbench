@@ -144,6 +144,8 @@ export default function CheckoutPage() {
         </div>
         <div className="col-6 right-content">
           <h1>Checkout</h1>
+          {loading ? <p>Checkout on progress</p> : null}
+          {error ? <p>{error?.message}</p> : null}
           <form onSubmit={handleSubmit} className="mt-4">
             <div className="mb-4">
               <label htmlFor="fullname" className="form-label">

@@ -69,7 +69,7 @@ export default function Navbar() {
           </Link>
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 align-bottom">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/newproduct">
                 NEW PRODUCT
               </Link>
             </li>
