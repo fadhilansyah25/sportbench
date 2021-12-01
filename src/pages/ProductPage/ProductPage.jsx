@@ -169,7 +169,7 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
-      <ProductList title="RECOMMENDED" data={dataRec}></ProductList>
+      <ProductList title="RECOMMENDED" data={dataRec} limit={8}></ProductList>
       <BottomBanner></BottomBanner>
       <Footer></Footer>
     </>
