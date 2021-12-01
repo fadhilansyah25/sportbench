@@ -14,7 +14,7 @@ export default function LandingPage() {
     <div>
       <HeroBanner></HeroBanner>
       <BrandLogo></BrandLogo>
-      <ProductList data={data} title="POPULAR RIGHT NOW"></ProductList>
+      <ProductList data={data} title="POPULAR RIGHT NOW" limit={8}></ProductList>
       <BottomBanner></BottomBanner>
       <Footer></Footer>
     </div>

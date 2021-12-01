@@ -64,7 +64,7 @@ export default function CheckoutPage() {
             className="d-block img-fluid justify-self-center mx-auto"
             alt=""
           />
-          <p className="text-center my-3">{checkoutProduct.productName}</p>
+          <h4 className="text-center my-3">{checkoutProduct.productName}</h4>
           <div className="d-flex justify-content-evenly">
             <div>
               <h5>Price</h5>
