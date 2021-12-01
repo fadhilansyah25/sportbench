@@ -74,28 +74,28 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/man-category">
                 MAN
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/women-category">
                 WOMEN
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/limited-category">
+                LIMITED
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/tools-category">
                 TOOLS
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/kids-category">
                 KIDS
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                LIMITED
               </Link>
             </li>
             <li className="nav-item">
