@@ -2,13 +2,18 @@ import Navbar from "components/Navbar/Navbar";
 import React from "react";
 import RegisterPage from "pages/RegisterPage/RegisterPage";
 import LoginPage from "pages/LoginPage/LoginPage";
-import LandingPage from "pages/LandingPage/LandingPage";
+import LandingPage from "pages/LandingPage";
 import ProductPage from "pages/ProductPage/ProductPage";
 import ConfirmPage from "pages/ConfirmPage/ConfirmPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CheckoutPage from "pages/CheckoutPage/CheckoutPage";
-import NewProductPage from "pages/NewProductPage/NewProductPage";
+import NewProductPage from "pages/NewProductPage";
+import ManCategoryPage from "pages/ManCategoryPage";
+import WomenProductPage from "pages/WomenProductPage";
+import LimitedProductPage from "pages/LimitedProductPage";
+import KidsProductPage from "pages/KidsProductPage";
+import ToolsProductPage from "pages/ToolsProductPage";
 
 function App() {
   const currentUser = useSelector((state) =>
@@ -45,6 +50,26 @@ function App() {
           <Route
             path="/newproduct"
             element={<NewProductPage></NewProductPage>}
+          ></Route>
+          <Route
+            path="/man-category"
+            element={<ManCategoryPage></ManCategoryPage>}
+          ></Route>
+          <Route
+            path="/women-category"
+            element={<WomenProductPage></WomenProductPage>}
+          ></Route>
+          <Route
+            path="/limited-category"
+            element={<LimitedProductPage></LimitedProductPage>}
+          ></Route>
+          <Route
+            path="/kids-category"
+            element={<KidsProductPage></KidsProductPage>}
+          ></Route>
+          <Route
+            path="/tools-category"
+            element={<ToolsProductPage></ToolsProductPage>}
           ></Route>
           <Route
             path="/product/:id"
