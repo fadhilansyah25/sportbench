@@ -8,7 +8,7 @@ import BottomBanner from "../components/BottomBanner/BottomBanner";
 import Footer from "../components/Footer/Footer";
 
 export default function LandingPage() {
-  const { data } = useQuery(GET_PRODUCTS);
+  const { data } = useQuery(GET_PRODUCTS, {variables: {order_by: {rating: "desc"}}});
 
   return (
     <div>
