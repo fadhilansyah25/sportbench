@@ -65,6 +65,7 @@ export const createFireBaseAuth = async (email, password, username) => {
     })
     .catch((error) => {
       console.log(error);
+      window.alert("Email or Password Invalid")
     });
   await updateProfile(user, { displayName: username });
 

@@ -4,10 +4,11 @@ import RegisterPage from "pages/RegisterPage/RegisterPage";
 import LoginPage from "pages/LoginPage/LoginPage";
 import LandingPage from "pages/LandingPage/LandingPage";
 import ProductPage from "pages/ProductPage/ProductPage";
-import ConfirmPage from 'pages/ConfirmPage/ConfirmPage'
+import ConfirmPage from "pages/ConfirmPage/ConfirmPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import CheckoutPage from "pages/CheckoutPage/CheckoutPage";
+import NewProductPage from "pages/NewProductPage/NewProductPage";
 
 function App() {
   const currentUser = useSelector((state) =>
@@ -42,6 +43,10 @@ function App() {
             }
           ></Route>
           <Route
+            path="/newproduct"
+            element={<NewProductPage></NewProductPage>}
+          ></Route>
+          <Route
             path="/product/:id"
             element={<ProductPage></ProductPage>}
           ></Route>
@@ -53,6 +58,7 @@ function App() {
             path="/confirmTrans"
             element={<ConfirmPage></ConfirmPage>}
           ></Route>
+          <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
