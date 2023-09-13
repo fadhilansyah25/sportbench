@@ -15,6 +15,6 @@ export default defineConfig({
   test: {
     globals: true, // allows us to use vitest library methods in unit test without explicit imports
     environment: "jsdom",
-    setupFiles: "./tests/setup.ts", // path to setup file
+    setupFiles: "./vitest.setup.ts", // path to setup file
   },
 });
