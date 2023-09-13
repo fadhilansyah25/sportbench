@@ -1,6 +1,6 @@
 import React from "react";
 import { ListMenu, menus, subMenu } from "./const";
-import NavItem from "./NavItem";
+import NavItem from "./navitem/NavItem";
 import "./style.css";
 
 type Props = {
@@ -66,7 +66,8 @@ export default function MobileMenu({ isClose = true, toggleNavbar }: Props) {
                 <NavItem
                   title={item.title}
                   uri={item.uri}
-                  openSubMenu={() => handleOpenSubMenu(item)}
+                  hasSubItem={item.subListMenu ? true : false}
+                  handleOpenSubMenu={() => handleOpenSubMenu(item)}
                 />
               </React.Fragment>
             ))}
@@ -84,9 +85,12 @@ export default function MobileMenu({ isClose = true, toggleNavbar }: Props) {
               <p className="mb-6 text-xl capitalize">{key}</p>
               <div className="flex flex-col gap-4">
                 {value.map((item, index) => (
-                  <React.Fragment key={`${item.title}-${index}`}>
-                    <NavItem isSubItem title={item.title} uri={item.uri} />
-                  </React.Fragment>
+                  <NavItem
+                    isSubItem
+                    key={`${item.title}-${index}`}
+                    title={item.title}
+                    uri={item.uri}
+                  />
                 ))}
               </div>
             </div>
