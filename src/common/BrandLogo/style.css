@@ -2,8 +2,7 @@
     padding: 2rem;
     border-top: 1px solid #a0a0a0;
     border-bottom: 1px solid #a0a0a0;
-
-    .container {
-        padding: 0 4rem;
-    }
+}
+.brand-logo .container {
+    padding: 0 4rem;
 }

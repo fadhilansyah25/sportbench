@@ -1,0 +1,54 @@
+.search_bar {
+  @apply flex rounded-[.02rem] border-[1px] outline outline-1 focus-within:outline-[1.7px] peer-focus:border-2;
+}
+
+.pre-scrim {
+  @apply invisible fixed inset-0 z-[1] opacity-0;
+  background-color: hwb(0 7% 93% / 0.36);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: opacity 0.25s linear;
+}
+
+.pre-scrim.open_menu {
+  @apply visible opacity-100;
+  transition: opacity 0.8s ease;
+}
+
+.mobile_menu {
+  @apply invisible absolute right-0 top-0 z-[2] h-full w-[0] overflow-x-hidden bg-white;
+  transform: translateX(100%);
+  transition: all 0.25s ease-in-out;
+}
+
+.mobile_menu.open_menu {
+  @apply visible w-[320px] rounded-[.02rem] border border-black;
+  transform: translateX(0);
+  transition: all 0.25s;
+}
+
+.pre_panel {
+  @apply absolute top-0 z-[2] inline-block w-full h-full bg-white;
+  transform: translateX(0);
+  transition: all 0.25s ease-in-out;
+}
+
+.pre_panel_root {
+  @apply flex flex-col gap-4 ps-12 pe-6;
+}
+
+.pre_panel_sub {
+  @apply px-8;
+  transform: translateX(0);
+  transition: all 0.25s ease-in-out;
+}
+
+.pre_hide_left {
+  transform: translateX(-320px);
+  transition: transform 0.25s;
+}
+
+.pre_hide_right {
+  transform: translateX(320px);
+  transition: transform 0.25s;
+}

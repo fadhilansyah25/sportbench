@@ -1,33 +1,36 @@
-import Navbar from "components/Navbar/Navbar";
-import React from "react";
-import RegisterPage from "pages/RegisterPage/RegisterPage";
-import LoginPage from "pages/LoginPage/LoginPage";
-import LandingPage from "pages/LandingPage";
-import ProductPage from "pages/ProductPage/ProductPage";
-import ConfirmPage from "pages/ConfirmPage/ConfirmPage";
+// import Navbar from "components/Navbar/Navbar";
+// import RegisterPage from "pages/RegisterPage/RegisterPage";
+// import LoginPage from "pages/LoginPage/LoginPage";
+// import LandingPage from "pages/LandingPage";
+// import ProductPage from "pages/ProductPage/ProductPage";
+// import ConfirmPage from "pages/ConfirmPage/ConfirmPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import CheckoutPage from "pages/CheckoutPage/CheckoutPage";
-import NewProductPage from "pages/NewProductPage";
-import ManCategoryPage from "pages/ManCategoryPage";
-import WomenProductPage from "pages/WomenProductPage";
-import LimitedProductPage from "pages/LimitedProductPage";
-import KidsProductPage from "pages/KidsProductPage";
-import ToolsProductPage from "pages/ToolsProductPage";
+// import { useSelector } from "react-redux";
+// import CheckoutPage from "pages/CheckoutPage/CheckoutPage";
+// import NewProductPage from "pages/NewProductPage";
+// import ManCategoryPage from "pages/ManCategoryPage";
+// import WomenProductPage from "pages/WomenProductPage";
+// import LimitedProductPage from "pages/LimitedProductPage";
+// import KidsProductPage from "pages/KidsProductPage";
+// import ToolsProductPage from "pages/ToolsProductPage";
+import "./App.css";
+
+import HomePage from "./homepage";
+import Navbar from "./common/navbar/Navbar";
 
 function App() {
-  const currentUser = useSelector((state) =>
-    state.currentUser ? JSON.parse(state.currentUser) : null
-  );
-  const expired = Date.now() > currentUser?.stsTokenManager?.expirationTime;
+  // const currentUser = useSelector((state) =>
+  //   state.currentUser ? JSON.parse(state.currentUser) : null
+  // );
+  // const expired = Date.now() > currentUser?.stsTokenManager?.expirationTime;
 
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
-          <Route path="/" element={<LandingPage></LandingPage>}></Route>
-          <Route
+          {/* <Route path="/" element={<HomePage></HomePage>}></Route> */}
+          {/* <Route
             path="/register"
             element={
               currentUser && !expired ? (
@@ -82,7 +85,7 @@ function App() {
           <Route
             path="/confirmTrans"
             element={<ConfirmPage></ConfirmPage>}
-          ></Route>
+          ></Route> */}
           <Route path="*" element={<Navigate to="/"></Navigate>}></Route>
         </Routes>
       </BrowserRouter>

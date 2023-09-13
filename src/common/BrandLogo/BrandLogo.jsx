@@ -1,5 +1,4 @@
-import React from "react";
-import "./BrandLogo.scss";
+import "./style.css";
 import PumaLogo from "../../assets/PUMA Logo.svg";
 import NikeLogo from "../../assets/Nike Logo.svg";
 import AdidasLogo from "../../assets/Adidas Ag Logo.svg";

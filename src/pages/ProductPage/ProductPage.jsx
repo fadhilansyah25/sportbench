@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { GET_PRODUCTS } from "../../graphql/queries";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../common/Footer/Footer";
 import BottomBanner from "components/BottomBanner/BottomBanner";
 import ProductList from "components/ProductList/ProductList";
 import "./ProductPage.scss";
