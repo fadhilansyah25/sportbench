@@ -7,16 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 import NavItem from ".";
 
 // Tests
-describe("Renders NavItem component correctly", async () => {
+describe("Renders NavItem component correctly", () => {
   /**
    * Render main menu item
    */
-  it("Should renders a main menu item", async () => {
-    await render(<NavItem title="Home" uri="/home" />, {
+  it("Should renders a main menu item", () => {
+    render(<NavItem title="Home" uri="/home" />, {
       wrapper: BrowserRouter,
     });
 
-    const linkElement = await screen.getByText("Home");
+    const linkElement = screen.getByText("Home");
 
     expect(linkElement).toBeInTheDocument();
   });
@@ -24,8 +24,8 @@ describe("Renders NavItem component correctly", async () => {
   /**
    * Render a sub-menu item
    */
-  it("Should renders a sub-menu item", async () => {
-    await render(<NavItem isSubItem title="Submenu Item" uri="/submenu" />, {
+  it("Should renders a sub-menu item", () => {
+    render(<NavItem isSubItem title="Submenu Item" uri="/submenu" />, {
       wrapper: BrowserRouter,
     });
 
@@ -37,9 +37,9 @@ describe("Renders NavItem component correctly", async () => {
   /**
    * Render a menu item with a sub-menu
    */
-  it("renders a menu item with a sub-menu", async () => {
+  it("renders a menu item with a sub-menu", () => {
     const mockOpenSubMenu = vi.fn();
-    await render(
+    render(
       <NavItem
         hasSubItem
         handleOpenSubMenu={mockOpenSubMenu}
@@ -48,11 +48,11 @@ describe("Renders NavItem component correctly", async () => {
       />,
       { wrapper: BrowserRouter },
     );
-    const linkElement = await screen.getByText("Menu with Submenu");
+    const linkElement = screen.getByText("Menu with Submenu");
     expect(linkElement).toBeInTheDocument();
 
     // Click the button to open the sub-menu
-    const buttonElement = await screen.getByRole("button");
+    const buttonElement = screen.getByRole("button");
     fireEvent.click(buttonElement);
     expect(mockOpenSubMenu).toHaveBeenCalledTimes(1);
   });

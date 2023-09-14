@@ -74,3 +74,5 @@ export const MenuPanel = (props: RootPanelProps): JSX.Element => {
     </div>
   );
 };
+
+export default MenuPanel;
