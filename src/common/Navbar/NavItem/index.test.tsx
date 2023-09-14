@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 
 // To Test
-import NavItem from "@/common/navbar/navitem/NavItem";
+import NavItem from ".";
 
 // Tests
 describe("Renders NavItem component correctly", async () => {

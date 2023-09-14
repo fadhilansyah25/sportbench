@@ -16,7 +16,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./homepage";
-import Navbar from "./common/navbar/Navbar";
+import Navbar from "./common/Navbar/Navbar";
 
 function App() {
   // const currentUser = useSelector((state) =>

@@ -1,0 +1,25 @@
+.pre_panel {
+  @apply absolute top-0 z-[2] inline-block h-full w-full bg-white;
+  transform: translateX(0);
+  transition: all 0.25s ease-in-out;
+}
+
+.pre_panel_root {
+  @apply flex flex-col gap-4 pe-6 ps-12;
+}
+
+.pre_panel_sub {
+  @apply flex flex-col gap-4 pe-6 ps-12;
+  transform: translateX(0);
+  transition: all 0.25s ease-in-out;
+}
+
+.pre_hide_left {
+  transform: translateX(-320px);
+  transition: transform 0.25s;
+}
+
+.pre_hide_right {
+  transform: translateX(320px);
+  transition: transform 0.25s;
+}

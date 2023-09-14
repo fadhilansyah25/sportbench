@@ -79,7 +79,7 @@ export default function Navbar() {
       </div>
 
       {/* Nav Mobile Menu */}
-      <MobileMenu isClose={isClose} toggleNavbar={() => setIsClose(!isClose)} />
+      <MobileMenu initClose={isClose} toggleNavbar={() => setIsClose(!isClose)} />
     </div>
   );
 }

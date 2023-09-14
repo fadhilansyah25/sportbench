@@ -26,29 +26,3 @@
   transform: translateX(0);
   transition: all 0.25s;
 }
-
-.pre_panel {
-  @apply absolute top-0 z-[2] inline-block w-full h-full bg-white;
-  transform: translateX(0);
-  transition: all 0.25s ease-in-out;
-}
-
-.pre_panel_root {
-  @apply flex flex-col gap-4 ps-12 pe-6;
-}
-
-.pre_panel_sub {
-  @apply px-8;
-  transform: translateX(0);
-  transition: all 0.25s ease-in-out;
-}
-
-.pre_hide_left {
-  transform: translateX(-320px);
-  transition: transform 0.25s;
-}
-
-.pre_hide_right {
-  transform: translateX(320px);
-  transition: transform 0.25s;
-}

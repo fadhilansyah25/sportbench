@@ -44,7 +44,9 @@ type TitleProps = Pick<NavItemProps, "title" | "uri" | "isSubItem">;
 const Title = ({ title, uri, isSubItem }: TitleProps) => {
   return (
     <Link
-      className={`${isSubItem ? "text-sm" : "text-xl"} capitalize`}
+      className={`${
+        isSubItem ? "text-sm font-medium text-gray-500" : "text-xl"
+      } capitalize`}
       to={uri}
     >
       {title}

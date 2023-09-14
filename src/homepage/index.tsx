@@ -3,7 +3,7 @@
 // import React from "react";
 import BrandLogo from "../common/BrandLogo/BrandLogo";
 import HeroBanner from "../common/HeroBanner/HeroBanner";
-import Navbar from "../common/navbar/Navbar";
+import Navbar from "../common/Navbar/Navbar";
 // import ProductList from "../components/ProductList/ProductList";
 // import BottomBanner from "../components/BottomBanner/BottomBanner";
 // import Footer from "../components/Footer/Footer";
