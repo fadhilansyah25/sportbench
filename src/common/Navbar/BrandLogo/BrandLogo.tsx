@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import assets from "../../assets";
+import assets from "../../../assets";
 
 export default function BrandLogo() {
   return (

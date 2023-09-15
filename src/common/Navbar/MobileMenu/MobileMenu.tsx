@@ -1,7 +1,7 @@
 import React from "react";
-import { ListMenu, menus, subMenu } from "./const";
+import { ListMenu, menus, subMenu } from "../const";
 import "./style.css";
-import { MenuPanel } from "./MenuPanel";
+import { MenuPanel } from "../MenuPanel";
 
 type Props = {
   initClose?: boolean;

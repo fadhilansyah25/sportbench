@@ -1,8 +1,7 @@
 import React from "react";
-import "./style.css";
-import SearchBar from "./SearchBar";
-import BrandLogo from "./BrandLogo";
-import MobileMenu from "./MobileMenu";
+import SearchBar from "./SearchBar/SearchBar";
+import BrandLogo from "./BrandLogo/BrandLogo";
+import MobileMenu from "./MobileMenu/MobileMenu";
 import { menus } from "./const";
 import NavItem from "./NavItem";
 
@@ -10,8 +9,8 @@ export default function Navbar() {
   const [isClose, setIsClose] = React.useState(true);
 
   return (
-    <div className="w-full border-b border-black p-4">
-      <div className="mx-auto flex max-w-5xl justify-between gap-4">
+    <div className="fixed z-10 w-full border-b border-black bg-white p-4">
+      <div className="container mx-auto flex justify-between gap-4">
         <BrandLogo />
 
         <div className="hidden md:flex">

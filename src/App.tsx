@@ -16,7 +16,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 
 import HomePage from "./homepage";
-import Navbar from "./common/Navbar/Navbar";
+import Navbar from "./common/Navbar";
 
 function App() {
   // const currentUser = useSelector((state) =>
@@ -29,7 +29,7 @@ function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <Routes>
-          {/* <Route path="/" element={<HomePage></HomePage>}></Route> */}
+          <Route path="/" element={<HomePage></HomePage>}></Route>
           {/* <Route
             path="/register"
             element={
