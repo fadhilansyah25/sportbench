@@ -45,7 +45,7 @@ const Title = ({ title, uri, isSubItem }: TitleProps) => {
   return (
     <Link
       className={`${
-        isSubItem ? "text-sm font-medium text-gray-500" : "text-xl"
+        isSubItem ? "text-sm font-medium text-gray-500" : "text-xl md:text-base"
       } capitalize`}
       to={uri}
     >

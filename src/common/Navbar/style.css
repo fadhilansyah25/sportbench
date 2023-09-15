@@ -1,7 +1,3 @@
-.search_bar {
-  @apply flex rounded-[.02rem] border-[1px] outline outline-1 focus-within:outline-[1.7px] peer-focus:border-2;
-}
-
 .pre-scrim {
   @apply invisible fixed inset-0 z-[1] opacity-0;
   background-color: hwb(0 7% 93% / 0.36);
