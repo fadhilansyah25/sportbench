@@ -5,10 +5,13 @@ import { MenuPanel } from "../MenuPanel";
 
 type Props = {
   initClose?: boolean;
-  toggleNavbar: (s: boolean) => void;
+  handleCloseMenu: (s: boolean) => void;
 };
 
-export default function MobileMenu({ initClose = true, toggleNavbar }: Props) {
+export default function MobileMenu({
+  initClose = true,
+  handleCloseMenu,
+}: Props) {
   const [subMenuActive, setSubMenuActive] = React.useState<Array<string>>([]);
   const [isClosed, setIsClosed] = React.useState(initClose);
 
@@ -21,8 +24,8 @@ export default function MobileMenu({ initClose = true, toggleNavbar }: Props) {
 
   const handleClose = (state: boolean) => {
     setIsClosed(state);
-    if (toggleNavbar) {
-      toggleNavbar(state);
+    if (handleCloseMenu) {
+      handleCloseMenu(state);
     }
     setSubMenuActive([]);
   };
@@ -57,8 +60,9 @@ export default function MobileMenu({ initClose = true, toggleNavbar }: Props) {
           />
 
           {/* Render All Sub Menu Panel */}
-          {Array.from(subMenu.entries()).map(([key, value]) => (
+          {Array.from(subMenu.entries()).map(([key, value], i) => (
             <MenuPanel
+              key={`i+${key}`}
               typePanel="sub"
               menus={value}
               subMenuTitle={key}
